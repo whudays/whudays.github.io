@@ -11,14 +11,22 @@
             padding: 50px;
             background-image: url('brick.png'); /* 添加背景图片 */
             background-repeat: repeat; /* 背景平铺 */
-            background-size: 5%; /* 默认大小 */
+            background-size: 5%/* 默认大小 */
+        }
+        h1, p {
+            color: #333; /* 文字颜色 */
+            text-shadow: 
+                -1.5px -1.5px 0 #fff,  /* 左上 */
+                1.5px -1.5px 0 #fff,   /* 右上 */
+                -1.5px 1.5px 0 #fff,   /* 左下 */
+                1.5px 1.5px 0 #fff;    /* 右下 */ 
         }
         h1 {
-            color: #333;
+            font-size: 36px; /* 可以根据需要调整标题大小 */
         }
         p {
-            font-size: 18px;
-            color: #666;
+            font-size: 18px; /* 段落文字大小 */
+            color: #666; /* 段落文字颜色 */
         }
         a {
             display: inline-block;
@@ -28,6 +36,7 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            box-shadow: none; /* 确保没有阴影 */
         }
         a:hover {
             background-color: #0056b3;
@@ -37,7 +46,9 @@
             max-width: 640px; /* 设置最大宽度以适应不同屏幕 */
             height: auto;
             aspect-ratio: 16 / 9; /* 使用CSS的aspect-ratio属性 */
-            border: none; /* 去掉边框 */
+            border: 3px solid #fff; /* 添加白色边框，宽度为3px */
+            border-radius: 8px; /* 可选：添加圆角 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 可选：添加阴影效果 */
         }
     </style>
 </head>
