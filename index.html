@@ -50,6 +50,40 @@
             border-radius: 8px; /* 可选：添加圆角 */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 可选：添加阴影效果 */
         }
+      /* 模态框样式 */
+        .modal {
+            display: none; /* 隐藏模态框 */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7); /* 黑色透明背景 */
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 1000px; /* 最大宽度 */
+            border-radius: 10px; /* 圆角 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -75,5 +109,44 @@
     <p>本群网盘</p>
     <a href="http://whudays-mc.ysepan.com/" target="_blank">点击此处跳转</a>
     <p>网盘密码为195741944，无需登录即可上传文件，留言</p>
-<a href="pdfjs/web/viewer.html?file=https://whudays-mc.com.cn/xc.pdf">
-点击查看pdf内容</a>
+
+  <!-- 模态框按钮 -->
+    <a href="#" id="modalBtn">点击查看相册</a>
+
+<!-- 模态框 -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>群相册</h2>
+        <iframe src="https://whudays-mc.com.cn/pdfjs/web/viewer.html?file=https://whudays-mc.com.cn/xc.pdf" style="height: 600px; width: 100%; border: none;"></iframe>
+    </div>
+</div>
+
+    <script>
+        // 获取模态框
+        var modal = document.getElementById("myModal");
+
+        // 获取按钮和关闭按钮
+        var btn = document.getElementById("modalBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        // 点击按钮打开模态框
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // 点击关闭按钮关闭模态框
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // 点击模态框外部关闭模态框
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
