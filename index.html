@@ -9,7 +9,9 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
-            background-color: #f0f0f0;
+            background-image: url('brick.png'); /* 添加背景图片 */
+            background-repeat: repeat; /* 背景平铺 */
+            background-size: auto; /* 默认大小 */
         }
         h1 {
             color: #333;
@@ -29,6 +31,13 @@
         }
         a:hover {
             background-color: #0056b3;
+        }
+        iframe {
+            width: 100%;
+            max-width: 640px; /* 设置最大宽度以适应不同屏幕 */
+            height: auto;
+            aspect-ratio: 16 / 9; /* 使用CSS的aspect-ratio属性 */
+            border: none; /* 去掉边框 */
         }
     </style>
 </head>
