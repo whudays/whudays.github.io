@@ -50,6 +50,12 @@
             border-radius: 8px; /* 可选：添加圆角 */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 可选：添加阴影效果 */
         }
+        iframe1 {
+            width: 100%;
+            height: auto;
+            border: 0
+            border-radius: 8px; /* 可选：添加圆角 */
+        }
       /* 模态框样式 */
         .modal {
             display: none; /* 隐藏模态框 */
@@ -64,13 +70,16 @@
         }
         .modal-content {
             background-color: #fff;
-            margin: 5% auto;
-            padding: 20px;
+            margin: 1% auto;
+            padding: 0;
             border: 1px solid #888;
-            width: 80%;
-            max-width: 1000px; /* 最大宽度 */
+            width: 900px;
+            max-width: 900px; /* 最大宽度 */
             border-radius: 10px; /* 圆角 */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .modal-body {
+            padding: 0; /* 移除模态框内容区域内边距 */
         }
         .close {
             color: #aaa;
@@ -111,14 +120,14 @@
     <p>网盘密码为195741944，无需登录即可上传文件，留言</p>
 
   <!-- 模态框按钮 -->
-    <a href="#" id="modalBtn">点击查看相册</a>
+    <a href="#" id="modalBtn">点击查看群相册</a>
 
 <!-- 模态框 -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>群相册</h2>
-        <iframe src="https://whudays-mc.com.cn/pdfjs/web/viewer.html?file=https://whudays-mc.com.cn/xc.pdf" style="height: 600px; width: 100%; border: none;"></iframe>
+        <iframe src="https://whudays-mc.com.cn/pdfjs/web/viewer.html?file=https://whudays-mc.com.cn/xc.pdf" class="iframe1" style="width: 100% auto; height: 800px; border: none;"></iframe>
     </div>
 </div>
 
